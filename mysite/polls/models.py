@@ -25,3 +25,6 @@ class Choice(models.Model):
 class Website(models.Model):
     link = models.CharField(max_length=1000)
     regex = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.link[:25]
