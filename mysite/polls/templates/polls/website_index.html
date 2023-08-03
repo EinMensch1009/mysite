@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websites reader</title>
+    <link rel="stylesheet" href="website_index.css">
+</head>
+<body>
+    {% if websites %}
+        {% for website in websites %} 
+
+        <div class="element-list">
+            <div class="element">
+                <span class="attribute">Link:</span>
+                <span class="value">website.link</span>
+            </div>
+            <div class="element">
+                <span class="attribute">RegEx:</span>
+                <span class="value">website.regex</span>
+            </div>
+        </div>
+
+        {% endfor %}
+    {% else %}
+        <p>Nix da ¯\_(ツ)_/¯</p>
+    {% endif %}
+
+</body>
+</html>

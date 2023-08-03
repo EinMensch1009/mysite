@@ -21,3 +21,7 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.question.question_text + ": " + self.choice_text
+    
+class Website(models.Model):
+    link = models.CharField(max_length=1000)
+    regex = models.CharField(max_length=500)
