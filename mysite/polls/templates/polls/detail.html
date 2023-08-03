@@ -1,6 +1,73 @@
-<h1>{{ question.question_text }}</h1>
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }}</li>
-{% endfor %}
-</ul>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.poll-form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.question-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.choice {
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+label {
+    color: #333;
+    cursor: pointer;
+}
+
+.vote-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.vote-button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+</head>
+<body>
+    
+    <form action="{% url 'polls:vote' question.id %}" method="post" class="poll-form">
+        {% csrf_token %}
+        <fieldset>
+            <legend><h1 class="question-title">{{ question.question_text }}</h1></legend>
+            {% if error_message %}
+                <p class="error-message"><strong>{{ error_message }}</strong></p>
+            {% endif %}
+            {% for choice in question.choice_set.all %}
+                <div class="choice">
+                    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+                </div>
+            {% endfor %}
+        </fieldset>
+        <input type="submit" value="Vote" class="vote-button">
+    </form>
+
+</body>
+</html>
