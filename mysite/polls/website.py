@@ -9,5 +9,5 @@ def index(request):
     websites = Website.objects.all()
     context = {"websites": websites}
     return render(request, "polls/website_index.html", context)
-def read(request):
+def read(request, website_id):
     return HttpResponse("website ausgelesen ^^")
