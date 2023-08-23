@@ -5,6 +5,24 @@ from django.urls import reverse
 from .models import Question, Choice
 
 
+def show(request):
+    return render(request, "polls/startseite.html")
+
+def wir(request):
+    return render(request, "polls/ueber_uns.html")
+
+def bwki(request):
+    return render(request, "polls/bwki.html")
+
+def tutorial(request):
+    return render(request, "polls/tutorial.html")
+
+def home(request):
+    return render(request, "polls/home.html")
+
+def statistiken(request):
+    return render(request, "polls/statistiken.html")
+
 def index(request):
     latest_question_list = Question.objects.order_by("-pub_date")[:5]
     context = {"latest_question_list": latest_question_list}
