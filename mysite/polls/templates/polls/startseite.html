@@ -26,6 +26,16 @@
     z-index: 1000;
 }
 
+.navbar-2 {
+    background-color: #575757;
+    color: #fff;
+    padding: 15px 0;
+    position: static;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -52,7 +62,9 @@ nav a:hover {
 .content {
     text-align: center;
     padding: 150px 0;
+    color: #4CAF50;
 }
+
 
 h1, h2 {
     font-size: 36px;
@@ -88,6 +100,13 @@ p {
     background-color: #fff;
 }
 
+.analysis-2 {
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+    background-color: #333333;
+}
+
 .analysis-image {
     background-image: url('analysis-image.jpg');
     background-size: contain;
@@ -102,6 +121,13 @@ p {
     width: 50%;
     padding: 0 50px;
     text-align: left;
+}
+
+.analysis-text-2 {
+    width: 50%;
+    padding: 0 50px;
+    text-align: left;
+    color: #ffffff;
 }
 
 .analysis h2 {
@@ -222,7 +248,7 @@ p {
 
     <main class="content">
         <h1 class="fadeInDown">Willkommen auf unserer Webseite!</h1>
-        <p class="fadeInUp">Wir bieten erstklassige Datenanalysen und Insights für Ihr Unternehmen.</p>
+        <p class="fadeInUp">Hier wollen wir dir helfen dein Berufsleben an deine Interessen anzupassen.</p>
         <a href="tutorial" class="start-button">Start</a>
             
     </main>
@@ -232,15 +258,25 @@ p {
             <img src="{%static 'polls/images/3.jfif'%}" height="500px">
         </div>
         <div class="analysis-text">
-            <h2 class="fadeInLeft">Echtzeit-Analysen</h2>
-            <p class="fadeInRight">Unsere leistungsstarken Analysetools bieten Ihnen Echtzeit-Einblicke für fundierte Entscheidungen.</p>
+            <h2 class="fadeInLeft">TEEEEEEST</h2>
+            <p class="fadeInRight">TESSSSSSSSSST2</p>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-image left-image">
-            <img src="{%static 'polls/images/1.jfif'%}">
-        </div>
+    <section class="content">
+        <h2 class="fadeInDown">Wie soll das Funktionieren?</p>
+        <p class="fadeInUp">Wir haben einen kleinen Fragebogen erstellt der dich nach deinen Interessen, Stärken und ähnlichem fragt um diese Daten auszuwerten und das perfekte Berufsfeld für dich zu finden!</h2>
+    </section>
+
+    <footer class="navbar-2">
+        <nav>
+            <ul>
+                <li><a href="impressum">Impressum</a></li>
+                <li><a href="ueber_uns">Über uns</a></li>
+                <li><a href="bwki">BW-KI</a></li>
+            </ul>
+        </nav>
     </footer>
+
 </body>
 </html>
