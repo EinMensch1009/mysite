@@ -5,193 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Über uns</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{%static 'polls/style.css'%}">
 </head>
-
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-}
-
-.navbar {
-    background-color: #e1b962;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav li {
-    margin: 0 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #4CAF50;
-}
-
-.content {
-    text-align: center;
-    padding: 150px 0;
-}
-
-h1, h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #e1b962;
-}
-
-p {
-    font-size: 18px;
-    color: #7d7d7d;
-    margin-bottom: 30px;
-}
-
-.analysis {
-    display: flex;
-    align-items: center;
-    padding: 100px 0;
-    background-color: #fff;
-}
-
-.analysis-image {
-    background-image: url('analysis-image.jpg');
-    background-size: contain;
-    width: 50%;
-    height: 500px;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
-    transform: translateX(-50px);
-}
-
-.analysis-text {
-    width: 50%;
-    padding: 0 50px;
-    text-align: left;
-}
-
-.analysis h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #e1b962;
-}
-
-.analysis p {
-    font-size: 16px;
-    color: #6dda78;
-}
-
-.analysis:hover .analysis-image {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f9f9f9;
-    padding: 20px;
-}
-
-.footer-image {
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    transition: transform 0.5s ease;
-}
-
-.left-image {
-    background-image: url('left-image.jpg');
-}
-
-.right-image {
-    background-image: url('right-image.jpg');
-}
-
-.footer-image:hover {
-    transform: scale(1.1);
-}
-
-.fadeInDown {
-    animation: fadeInDown 1s both;
-}
-
-.fadeInUp {
-    animation: fadeInUp 1s both;
-}
-
-.fadeInLeft {
-    animation: fadeInLeft 1s both;
-}
-
-.fadeInRight {
-    animation: fadeInRight 1s both;
-}
-
-@keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-</style>
 
 <body>
     <header class="navbar">
@@ -206,21 +21,43 @@ p {
     </header>
 
     <main class="content">
-        <h1 class="fadeInDown">Unsere Produkte</h1>
-        <p class="fadeInUp">Entdecken Sie unsere erstklassigen Produkte und steigern Sie Ihr Geschäft.</p>
+        <h1 class="fadeInDown">Über uns</h1>
+        <p class="fadeInUp">
+            Wir haben uns für den BW-KI dieses Projekt ausgedacht um dir mithilfe von KI dein Einstieg ins Berufsleben zu erleichtern.</p>
     </main>
 
     <section class="analysis">
-        <div class="analysis-image"></div>
+        <div class="analysis-image">
+            <img src="{%static 'polls/images/6.jfif'%}" height="500px"></div>
         <div class="analysis-text">
-            <h2 class="fadeInLeft">Erfolgreiche Strategien</h2>
-            <p class="fadeInRight">Profitieren Sie von bewährten Strategien, um Ihr Unternehmen auf die nächste Stufe zu heben.</p>
+            <h2 class="fadeInLeft">Die Idee</h2>
+            <p class="fadeInRight">
+                Unser Ziel war es eine Webseite zu erstellen, die dir helfen soll eine Idee für den zukünftigen Berufsweg zu bekommen mithilfe von Stellenanzeigen zu Jobs und Praktika aus der Region. Um zu bestimmen, welche Jobs zu dir passen, haben wir einen Fragebogen erstellen, welcher dich, mit Hilfe von KI, über deine Interessen, Vorlieben und Fähigkeiten ausfragt, um ein auf dich zugeschnittenes Berufsfeld zu finden.</p>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-image left-image"></div>
-        <div class="footer-image right-image"></div>
+    <section class="analysis">
+        <div class="analysis-text">
+            <h2 class="fadeInLeft">Wer sind wir überhaupt?</h2>
+            <p class="fadeInRight">    
+           Wir sind eine AG des Pestalozzi-Gymnasiums Unna welche sich seit April 2023 mit KI beschäftigt und damit ein wenig herumspielt.
+        </p>
+        </div>
+        
+        <div class="analysis-image">
+            <img src="{%static 'polls/images/8.jfif'%}" height="500px">
+        </div>
+    </section>
+
+    <footer class="navbar-2">
+        <nav>
+            <ul>
+                <li><a href="impressum">Impressum</a></li>
+                <li><a href="ueber_uns">Über uns</a></li>
+                <li><a href="bwki">BW-KI</a></li>
+            </ul>
+        </nav>
     </footer>
+
 </body>
 </html>

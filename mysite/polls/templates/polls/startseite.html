@@ -5,234 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startseite</title>
-    <link rel="stylesheet" href="{%static 'polls/startseite.css'%}">
+    <link rel="stylesheet" href="{%static 'polls/style.css'%}">
 </head>
-
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-}
-
-.navbar {
-    background-color: #e1b962;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar-2 {
-    background-color: #575757;
-    color: #fff;
-    padding: 15px 0;
-    position: static;
-    width: 100%;
-    bottom: 0;
-    z-index: 1000;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav li {
-    margin: 0 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #4CAF50;
-}
-
-.content {
-    text-align: center;
-    padding: 150px 0;
-    color: #4CAF50;
-}
-
-
-h1, h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #e1b962;
-}
-
-p {
-    font-size: 18px;
-    color: #7d7d7d;
-    margin-bottom: 30px;
-}
-
-.start-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #4ad3b3;
-    color: #fff;
-    font-size: 18px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.start-button:hover {
-    background-color: #3ecbaa;
-}
-
-.analysis {
-    display: flex;
-    align-items: center;
-    padding: 100px 0;
-    background-color: #fff;
-}
-
-.analysis-2 {
-    display: flex;
-    align-items: center;
-    padding: 100px 0;
-    background-color: #333333;
-}
-
-.analysis-image {
-    background-image: url('analysis-image.jpg');
-    background-size: contain;
-    width: 50%;
-    height: 500px;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
-    transform: translateX(-50px);
-}
-
-.analysis-text {
-    width: 50%;
-    padding: 0 50px;
-    text-align: left;
-}
-
-.analysis-text-2 {
-    width: 50%;
-    padding: 0 50px;
-    text-align: left;
-    color: #ffffff;
-}
-
-.analysis h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #e1b962;
-}
-
-.analysis p {
-    font-size: 16px;
-    color: #6dda78;
-}
-
-.analysis:hover .analysis-image {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f9f9f9;
-    padding: 20px;
-}
-
-.footer-image {
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    transition: transform 0.5s ease;
-}
-
-.left-image {
-    background-image: url('left-image.jpg');
-}
-
-.right-image {
-    background-image: url('right-image.jpg');
-}
-
-.footer-image:hover {
-    transform: scale(1.1);
-}
-
-.fadeInDown {
-    animation: fadeInDown 1s both;
-}
-
-.fadeInUp {
-    animation: fadeInUp 1s both;
-}
-
-.fadeInLeft {
-    animation: fadeInLeft 1s both;
-}
-
-.fadeInRight {
-    animation: fadeInRight 1s both;
-}
-
-@keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-</style>
 
 <body>
     <header class="navbar">
@@ -249,7 +23,6 @@ p {
     <main class="content">
         <h1 class="fadeInDown">Willkommen auf unserer Webseite!</h1>
         <p class="fadeInUp">Hier wollen wir dir helfen dein Berufsleben an deine Interessen anzupassen.</p>
-        <a href="tutorial" class="start-button">Start</a>
             
     </main>
 
@@ -258,8 +31,9 @@ p {
             <img src="{%static 'polls/images/3.jfif'%}" height="500px">
         </div>
         <div class="analysis-text">
-            <h2 class="fadeInLeft">TEEEEEEST</h2>
-            <p class="fadeInRight">TESSSSSSSSSST2</p>
+            <h2 class="fadeInLeft">Hier gehts los!</h2>
+            <p class="fadeInRight">Starte jetzt den Fragebogen um das perfekte Berufsfeld für dich zu finden!</p>
+            <a href="tutorial" class="start-button fadeInUp">Start</a>
         </div>
     </section>
 
