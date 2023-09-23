@@ -1,12 +1,22 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 from .models import Question, Choice
 
+def store(request):
+    user = User.objects.create_user(request.POST["username"], request.POST["email"], request.POST["password"])
+    user.last_name = request.POST["last_name"]
+    user.first_name = request.POST["first_name"]
+    user.save()
+    return HttpResponseRedirect(reverse("polls:startseite"))
 
 def show(request):
     return render(request, "polls/startseite.html")
+
+def show_register(request):
+    return render(request, "polls/register.html")
 
 def wir(request):
     return render(request, "polls/ueber_uns.html")
@@ -16,9 +26,6 @@ def bwki(request):
 
 def tutorial(request):
     return render(request, "polls/tutorial.html")
-
-def home(request):
-    return render(request, "polls/home.html")
 
 def statistiken(request):
     return render(request, "polls/statistiken.html")
@@ -56,3 +63,5 @@ def vote(request, question_id):
         selected_choice.votes += 1
         selected_choice.save()
     return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
+
+

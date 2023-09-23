@@ -12,10 +12,11 @@ urlpatterns = [
     path("<int:question_id>/vote/", views.vote, name="vote"),
     path("websites", website.index, name="website_index"),
     path("websites/<int:website_id>/read", website.read, name="website_read"),
-    path("startseite", views.show),
+    path("startseite", views.show, name="startseite"),
     path("ueber_uns", views.wir, name="ueber-uns"),
-    path("home", views.home, name="home"),
     path("bwki", views.bwki, name="bwki"),
     path("statistiken", views.statistiken, name="statistiken"),
     path("tutorial", views.tutorial, name="tutorial"),
+    path("register", views.show_register, name="register"),
+    path("register/store", views.store, name="store"),
 ]
