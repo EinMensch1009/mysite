@@ -2,6 +2,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
 
 from .models import Question, Choice
 
@@ -10,16 +12,34 @@ def store(request):
     user.last_name = request.POST["last_name"]
     user.first_name = request.POST["first_name"]
     user.save()
+    login(request, user)
     return HttpResponseRedirect(reverse("polls:startseite"))
 
+def auth(request):
+    username = request.POST["username"]
+    password = request.POST["password"]
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return HttpResponseRedirect(reverse("polls:startseite"))
+    else:
+        return render(request, "polls/login.html", {"error": "Passwort oder Nutzername falsch oder noch nicht registriert! Überprüf das mal!"})
+        
 def show(request):
     return render(request, "polls/startseite.html")
+
+def logout_u(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("polls:startseite"))
 
 def show_register(request):
     return render(request, "polls/register.html")
 
 def wir(request):
     return render(request, "polls/ueber_uns.html")
+
+def show_login(request):
+    return render(request, "polls/login.html")
 
 def bwki(request):
     return render(request, "polls/bwki.html")

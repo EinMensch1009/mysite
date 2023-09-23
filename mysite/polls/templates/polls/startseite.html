@@ -10,14 +10,78 @@
 
 <body>
     <header class="navbar">
-        <nav>
+        <style>
+            /* CSS für die Navbar */
+            .navbar {
+                background-color: #44bfbf;
+                color: #fff;
+                padding: 10px 0;
+                display: flex;
+                justify-content: space-between;
+            }
+    
+            .navbar ul {
+                list-style: none;
+                display: flex;
+                margin: 0;
+                padding: 0;
+            }
+    
+            .navbar li {
+                margin: 0 20px;
+            }
+    
+            .navbar a {
+                text-decoration: none;
+                color: #fff;
+                font-weight: bold;
+            }
+    
+            .navbar a:hover {
+                color: #ffffff;
+            }
+    
+            /* CSS für die Login- und Registrierungs-Buttons */
+            .login-button, .register-button {
+                background-color: #44bfbf;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+    
+            .login-button:hover, .register-button:hover {
+                background-color: #000000;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
             <ul>
                 <li><a href="startseite">Home</a></li>
                 <li><a href="statistiken">Statistiken</a></li>
                 <li><a href="ueber_uns">Über uns</a></li>
                 <li><a href="bwki">BW-KI</a></li>
             </ul>
-        </nav>
+
+            {% if user.is_authenticated %}
+
+                <div>
+                    {{user.username}}
+                    <a href="logout" class="login-button">Logout</a>
+                </div>
+
+            {% else %}
+
+                <div>
+                    <a href="login" class="login-button">Login</a>
+                    <a href="register" class="register-button">Registrieren</a>
+                </div>
+
+            {% endif %}
+
+        </div>
     </header>
 
     <main class="content">
