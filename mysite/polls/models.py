@@ -30,14 +30,53 @@ class Website(models.Model):
         return self.link[:25]
     
 class Umfrage(models.Model):
-    frage_1 = models.CharField(max_length=500)
-    frage_2 = models.CharField(max_length=500)
-    frage_3 = models.CharField(max_length=500)
-    frage_4 = models.CharField(max_length=500)
-    frage_5 = models.CharField(max_length=500)
-    frage_6 = models.CharField(max_length=500)
-    frage_7 = models.CharField(max_length=500)
-    frage_8 = models.CharField(max_length=500)
-    frage_9 = models.CharField(max_length=500)
-    frage_10 = models.CharField(max_length=500)
 
+    # - Diese Schulfächer gefallen mir am Besten
+        #  Mathe Deutsch Informatik Biologie Sport Physik Chemie Englisch (multi answer)
+
+    frage_1 = models.CharField(max_length=500)
+
+    # - Ich könnte alleine ein Bild aufhängen
+        # Ja, Nein, Das kann doch jeder, Niemals, Ich denke schon
+
+    frage_2 = models.CharField(max_length=500)
+
+    # - Ich habe alle meine Mappen und Hefte für die Schule geordnet
+        # Ein wenig, gar nicht, Natürlich, Einigermaßen, Ja
+
+    frage_3 = models.CharField(max_length=500)
+
+    # - Mein PC hat ein Problem, ich kann es aber selber lösen
+        # Ja, Nein, Ich denke schon, Niemals, Klar doch
+
+    frage_4 = models.CharField(max_length=500)
+
+    # -Ich gestalte mein Zimmer gerne um
+        # Nein, Nicht wirklich, Ja, Sehr oft, Manchmal
+
+    frage_5 = models.CharField(max_length=500)
+
+# - Alles was ich machge plane ich durch
+    # Manchmal, Nie, Immer, Oft, Selten
+
+    frage_6 = models.CharField(max_length=500)
+
+# - Ich packe mit im Haushalt an 
+    # Jeden Tag, Nie, Manchmal, selten, Sehr oft
+
+    frage_7 = models.CharField(max_length=500)
+
+# - Kochen macht mir Spaß
+    # Ja voll, öfters, gar nicht, selten, Manchmal
+
+    frage_8 = models.CharField(max_length=500)
+
+# - Ich kümmer mich gerne um Tiere
+    # Ja voll, öfters, gar nicht, selten, Manchmal
+
+    frage_9 = models.CharField(max_length=500)
+
+# - Meine Mutter möchte den Garten bepflanzen, ich helfe mit
+    # Nein, Nicht wirklich, Ja, Sehr oft, Manchmal
+
+    frage_10 = models.CharField(max_length=500)
