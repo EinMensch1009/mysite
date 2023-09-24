@@ -23,8 +23,15 @@ class Choice(models.Model):
         return self.question.question_text + ": " + self.choice_text
     
 class Website(models.Model):
+    name = models.CharField(max_length=100, unique=True)
     link = models.CharField(max_length=1000)
     regex = models.CharField(max_length=500)
+    groups = models.CharField(max_length=500)
+    parsed = models.BooleanField(default=False)
+    regex_link = models.CharField(max_length=500)
+    groups_link = models.CharField(max_length=500)
+    parsed_link = models.BooleanField(default=False)
+    link_comp = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.link[:25]

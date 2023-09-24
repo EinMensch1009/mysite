@@ -1,0 +1,52 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="{%static 'polls/style.css'%}">
+</head>
+
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="startseite">Home</a></li>
+                <li><a href="statistiken">Statistiken</a></li>
+                <li><a href="ueber_uns">Über uns</a></li>
+                <li><a href="bwki">BW-KI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1 class="fadeInDown">Übersicht Webseiten</h1>
+        <p class="fadeInUp"><a href="{% url 'polls:website-create'%}">Klicke hier um eine neue Webseite hinzuzufügen</a></p>
+            
+    </main>
+
+    <section class="analysis">
+        {% if website_list %}
+            <ul>
+            {% for website in website_list %}
+                <li><a href="{% url 'polls:website-show' website.id %}">{{ website.name }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No websites are available.</p>
+        {% endif %}
+    </section>
+
+    <footer class="navbar-2">
+        <nav>
+            <ul>
+                <li><a href="impressum">Impressum</a></li>
+                <li><a href="ueber_uns">Über uns</a></li>
+                <li><a href="bwki">BW-KI</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>

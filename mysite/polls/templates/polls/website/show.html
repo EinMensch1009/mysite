@@ -1,0 +1,108 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="{%static 'polls/style.css'%}">
+    <link rel="stylesheet" href="{%static 'polls/font-awesome-4.7.0/css/font-awesome.min.css'%}">
+    <style>
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        }
+
+        /* Stile für die Tabellenüberschrift */
+        th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        padding: 10px;
+        text-align: left;
+        }
+
+        /* Stile für die Tabellendaten */
+        td {
+        border: 1px solid #dddddd;
+        padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="startseite">Home</a></li>
+                <li><a href="statistiken">Statistiken</a></li>
+                <li><a href="ueber_uns">Über uns</a></li>
+                <li><a href="bwki">BW-KI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% if website %}
+        <main class="content">
+            <h1 class="fadeInDown">{{ website.name }}</h1>
+            <p class="fadeInUp"><a href="{% url 'polls:website-edit' website.id %}">
+                    <i class="fa fa-pencil" aria-hidden="true"></i> Bearbeiten</a></p>
+            <p class="fadeInUp"><a href="{% url 'polls:website-destroy' website.id %}">
+                    <i class="fa fa-trash" aria-hidden="true"></i> Löschen</a></p>
+            <p class="fadeInUp"><a href="{% url 'polls:website-parse' website.id %}">
+                <i class="fa fa-search" aria-hidden="true"></i> Webseite auslesen</a></p>
+            <p class="fadeInUp"><a href="{% url 'polls:website-parse_link' website.id %}">
+                <i class="fa fa-external-link" aria-hidden="true"></i> Webseitenlinks auslesen</a></p>
+        </main>
+
+        <section class="analysis">
+            <table>
+                <tr><td>Name:</td><td>{{ website.name }}</td></tr>
+                <tr><td>Link:</td><td>{{ website.link }}</td></tr>
+                <tr><td>RegEx:</td><td>{{ website.regex }}</td></tr>
+                <tr><td>Gruppen:</td><td>{{ website.groups }}</td></tr>
+                <tr><td>Wurde ausgelesen?</td><td>{{ website.parsed }}</td></tr>
+                <tr><td>RegEx Link:</td><td>{{ website.regex_link }}</td></tr>
+                <tr><td>Gruppen Link:</td><td>{{ website.groups_link }}</td></tr>
+                <tr><td>Link wurde ausgelesen?</td><td>{{ website.parsed_link }}</td></tr>
+                <tr><td>Link Vollständig:</td><td>{{ website.link_comp }}</td></tr>
+            </table>
+        </section>
+
+        {% if website.parsed %}
+            <table>
+                <tr>
+                {% for col in df.columns %}
+                    <th>
+                        {{col}}
+                    </td>
+                {% endfor %}
+                </tr>
+                {% for index, row in df.iterrows %}
+                    <tr>
+                    {% for cell in row %}
+                        <td>
+                        {{cell}}
+                        </td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+    {% else %}
+            <p>Webseite wurde nicht gefunden.</p>
+    {% endif %}
+
+    <footer class="navbar-2">
+        <nav>
+            <ul>
+                <li><a href="impressum">Impressum</a></li>
+                <li><a href="ueber_uns">Über uns</a></li>
+                <li><a href="bwki">BW-KI</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>

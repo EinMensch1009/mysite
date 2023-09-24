@@ -1,0 +1,66 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="{%static 'polls/style.css'%}">
+</head>
+
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="startseite">Home</a></li>
+                <li><a href="statistiken">Statistiken</a></li>
+                <li><a href="ueber_uns">Über uns</a></li>
+                <li><a href="bwki">BW-KI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1 class="fadeInDown">Bearbeite Webseite: {{website.name}}</h1>
+            
+    </main>
+
+    <h1>Formular</h1>
+    <form action="{% url 'polls:website-update' website.id%}" method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required value="{{ website.name }}"><br><br>
+
+        <label for="link">Link:</label>
+        <input type="text" id="link" name="link" required value="{{ website.link }}"><br><br>
+
+        <label for="regex">Regex:</label>
+        <input type="text" id="regex" name="regex" required value="{{ website.regex }}"><br><br>
+
+        <label for="groups">Gruppen:</label>
+        <input type="text" id="groups" name="groups" required value="{{ website.groups }}"><br><br>
+
+        <label for="regex_link">Regex Link:</label>
+        <input type="text" id="regex_link" name="regex_link" required value="{{ website.regex_link }}"><br><br>
+
+        <label for="groups_link">Gruppen Link:</label>
+        <input type="text" id="groups_link" name="groups_link" required value="{{ website.groups_link }}"><br><br>
+
+        <label for="link_comp">Link Vollständig:</label>
+        <input type="text" id="link_comp" name="link_comp" required value="{{ website.link_comp }}"><br><br>
+
+        <input type="submit" value="Absenden">
+    </form>
+
+    <footer class="navbar-2">
+        <nav>
+            <ul>
+                <li><a href="impressum">Impressum</a></li>
+                <li><a href="ueber_uns">Über uns</a></li>
+                <li><a href="bwki">BW-KI</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>
